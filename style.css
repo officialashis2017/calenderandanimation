@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.prob {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(21, 82, 235);
+    color: white;
+    margin: 7px auto
+}
+
+/* calendar CSS */
+.calender {
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.weekdays {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-weight: 900;
+    padding: 0px 5px 5px 5px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    gap: 0 50px;
+    background-color: rgb(144, 141, 141);
+}
+
+.normaldays {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    gap: 0 50px;
+}
+
+.item1 {
+    grid-column-start: 3;
+}
+
+ul {
+    list-style: none;
+}
+
+.calender-item {
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    transition: all 0.2s;
+}
+
+.normaldays > .calender-item:hover {
+    background-color: rgb(36, 72, 72);
+    transform: rotate(360deg);
+    color: white;
+    font-weight: 800;
+}
+
+/* text animnation CSS */
+#textAnimation {
+    width: 500px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#textstatic, #textdynamic {
+    width: 300px;
+    height: 50px;
+    padding: 3px;
+    font-size: 40px;
+    font-weight: 800;
+    color: grey;
+    text-align: center ;
+}
+
+#textdynamic {
+    background-color: rgb(26, 139, 26);
+    animation: textAniBg 3s linear infinite ;
+}
+#textAnimation > #textdynamic::before {
+    color: white;
+    content: "LIFESTYLE";
+    animation: textAni 3s linear infinite ;
+}
+@keyframes textAni {
+    0% {
+        content: "LIFESTYLE";
+    }
+    50% {
+        content: "EVERYTHING";
+    }
+    100% {
+        content: "WORK";
+    }
+}
+
+@keyframes textAniBg {
+    0% {
+        background-color: rgb(26, 139, 26);
+    }
+    50% {
+        background-color: rgb(222, 10, 10);
+    }
+    100% {
+        background-color: rgb(10, 146, 220);
+    }
+}
